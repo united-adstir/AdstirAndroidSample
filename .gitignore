@@ -1,4 +1,6 @@
 bin/
+gen/
+local.properties
 build.properties
-.settings/
 .DS_Store
+

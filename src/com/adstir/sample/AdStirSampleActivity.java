@@ -19,32 +19,32 @@ public class AdStirSampleActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        layout = (LinearLayout) findViewById(R.id.layout_main); // L‚ğ‘}“ü‚µ‚½‚¢layout‚Ìid‚ğw’è‚µ‚Ä‚­‚¾‚³‚¢B
-        adstirView = new AdstirView(this,1); // ˜gNo–¢w’è‚Ìê‡‚ÍƒfƒtƒHƒ‹ƒg˜g‚ªg—p‚³‚ê‚Ü‚·
-        layout.addView(adstirView, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)); // layout‚ÖaddView‚µ‚Ä‚­‚¾‚³‚¢B
+        layout = (LinearLayout) findViewById(R.id.layout_main); // åºƒå‘Šã‚’æŒ¿å…¥ã—ãŸã„layoutã®idã‚’æŒ‡å®šã—ã¦ãã ã•ã„ã€‚
+        adstirView = new AdstirView(this,1); // æ NoæœªæŒ‡å®šã®å ´åˆã¯ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆæ ãŒä½¿ç”¨ã•ã‚Œã¾ã™
+        layout.addView(adstirView, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)); // layoutã¸addViewã—ã¦ãã ã•ã„ã€‚
 
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-                // Activity‚ÌonDestroy()‚ÉAdstirTerminateƒNƒ‰ƒX‚ğ‰Šú‰»‚µ‚Ä‚­‚¾‚³‚¢B
+                // Activityã®onDestroy()æ™‚ã«AdstirTerminateã‚¯ãƒ©ã‚¹ã‚’åˆæœŸåŒ–ã—ã¦ãã ã•ã„ã€‚
         new AdstirTerminate(this);
     }
 
-        // AdstirView‚Ìstopƒƒ\ƒbƒh‚ğÀs‚·‚é‚±‚Æ‚É‚æ‚èA•s—v‚È’ÊM‚ğ—}‚¦‚é‚±‚Æ‚ªo—ˆ‚Ü‚·B
+        // AdstirViewã®stopãƒ¡ã‚½ãƒƒãƒ‰ã‚’å®Ÿè¡Œã™ã‚‹ã“ã¨ã«ã‚ˆã‚Šã€ä¸è¦ãªé€šä¿¡ã‚’æŠ‘ãˆã‚‹ã“ã¨ãŒå‡ºæ¥ã¾ã™ã€‚
     @Override
     protected void onPause() {
             super.onPause();
             adstirView.stop();
-          //eView‚ğæ“¾‚µ‚ÄremoveViewÀs
+          //è¦ªViewã‚’å–å¾—ã—ã¦removeViewå®Ÿè¡Œ
             ViewGroup parent = (ViewGroup)adstirView.getParent();
             if ( parent != null ) {
                 parent.removeView(adstirView);
             }
         }
 
-        // AdstirView‚Ìstartƒƒ\ƒbƒh‚ğÀs‚·‚é‚±‚Æ‚É‚æ‚èA’ÊM‚ğÄŠJ‚·‚é‚±‚Æ‚ªo—ˆ‚Ü‚·B
+        // AdstirViewã®startãƒ¡ã‚½ãƒƒãƒ‰ã‚’å®Ÿè¡Œã™ã‚‹ã“ã¨ã«ã‚ˆã‚Šã€é€šä¿¡ã‚’å†é–‹ã™ã‚‹ã“ã¨ãŒå‡ºæ¥ã¾ã™ã€‚
     @Override
     protected void onResume() {
             super.onResume();

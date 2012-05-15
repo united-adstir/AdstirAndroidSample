@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, AdStirSampleActivity!</string>
-    <string name="app_name">AdStirSample</string>
+    <string name="adstir_sample">AdStir Sample App.</string>
+    <string name="app_name">AdStir Sample</string>
 
 </resources>
