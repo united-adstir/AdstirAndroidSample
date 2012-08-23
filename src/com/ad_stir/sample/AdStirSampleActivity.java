@@ -14,7 +14,7 @@
    limitations under the License.
 */
 
-package com.adstir.sample;
+package com.ad_stir.sample;
 
 import com.ngigroup.adstir.AdstirTerminate;
 import com.ngigroup.adstir.AdstirView;
