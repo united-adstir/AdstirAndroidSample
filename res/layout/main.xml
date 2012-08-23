@@ -39,7 +39,7 @@
 			android:text="@string/adstir_sample" />
 	</LinearLayout>
 	<LinearLayout
-		android:id="@+id/layout_main"
+		android:id="@+id/ad_layout"
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content" >
 		<!-- ここに広告が表示されます -->
