@@ -16,10 +16,9 @@
 
 package com.ad_stir.sample;
 
-import com.ngigroup.adstir.AdstirTerminate;
-import com.ngigroup.adstir.AdstirView;
+import com.ad_stir.AdstirTerminate;
+import com.ad_stir.AdstirView;
 
-import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 
 import android.app.Activity;
@@ -29,7 +28,6 @@ import android.widget.LinearLayout;
 public class AdStirSampleActivity extends Activity {
 	private AdstirView adstirView;
 	private LinearLayout layout = null;
-	private static final int SPOT = 枠No; // 枠Noは利用するアプリの枠Noを指定してください。
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -37,8 +35,8 @@ public class AdStirSampleActivity extends Activity {
 		setContentView(R.layout.main);
 
 		// onCreate()にここから
-		layout = (LinearLayout) findViewById(R.id.ad_layout); // 先ほどレイアウトに追加したidを指定してください。
-		adstirView = new AdstirView(this, SPOT);
+		layout = (LinearLayout) findViewById(R.id.ad_layout);
+		adstirView = new AdstirView(this, "MEDIA-ID", SPOT-NO);
 		layout.addView(adstirView, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 		// ここまでを追加
 	}
@@ -48,41 +46,7 @@ public class AdStirSampleActivity extends Activity {
 		super.onDestroy();
 
 		// onDestroy()にここから
-		new AdstirTerminate(this);
-		// ここまでを追加
-	}
-
-	// AdstirViewのstopメソッドを実行することにより、不要な通信を抑えることが出来ます。
-	@Override
-	protected void onPause() {
-		super.onPause();
-
-		// onPause()にここから
-		adstirView.stop();
-		ViewGroup parent = (ViewGroup) adstirView.getParent();
-		if (parent != null) {
-			parent.removeView(adstirView);
-		}
-		// ここまでを追加
-	}
-
-	// AdstirViewのstartメソッドを実行することにより、通信を再開することが出来ます。
-	@Override
-	protected void onResume() {
-		super.onResume();
-
-		// onResume()にここから
-		int index = 0;
-		while (layout.getChildAt(index) != null) {
-			if (layout.getChildAt(index) == adstirView) {
-				return;
-			}
-			index++;
-		}
-		adstirView = null;
-		adstirView = new AdstirView(this, SPOT);
-		layout.addView(adstirView, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-		adstirView.start();
+		AdstirTerminate.init(this);
 		// ここまでを追加
 	}
 }

@@ -28,9 +28,6 @@
 		android:icon="@drawable/ic_launcher"
 		android:label="@string/app_name" >
 		
-		<!-- adstir -->
-		<meta-data android:name="ADSTIR_APP_ID" android:value="管理画面で発行されたメディアID" />
-		
 		<activity
 			android:name=".AdStirSampleActivity"
 			android:label="@string/app_name" >
