@@ -19,26 +19,24 @@ package com.ad_stir.sample;
 import com.ad_stir.AdstirTerminate;
 import com.ad_stir.AdstirView;
 
+import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.LinearLayout;
 
 public class AdStirSampleActivity extends Activity {
-	private AdstirView adstirView;
-	private LinearLayout layout = null;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
-		// onCreate()にここから
-		layout = (LinearLayout) findViewById(R.id.ad_layout);
-		adstirView = new AdstirView(this, "MEDIA-ID", SPOT-NO);
-		layout.addView(adstirView, new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-		// ここまでを追加
+		// AdstirView onCreate()
+		ViewGroup layout = (ViewGroup) findViewById(R.id.ad_layout);
+		AdstirView adstirView = new AdstirView(this, "MEDIA-ID", SPOT-NO);
+		layout.addView(adstirView, new ViewGroup.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+		//  / AdstirView onCreate()
 	}
 
 	@Override
