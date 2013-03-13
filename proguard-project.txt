@@ -12,7 +12,8 @@
 
 # Add any project specific keep options here:
 
--keep public class com.ngigroup.adsta.AdView
--keep public class com.ngigroup.adstir.adapters.*  {public *;protected *; private *;}
+-keep class com.ad_stir.** {*;}
+-keep class com.ngigroup.** {*;}
+-dontwarn com.ad_stir.adapters.**
 
 

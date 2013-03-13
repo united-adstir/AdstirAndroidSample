@@ -1,6 +1,8 @@
 /bin
 /gen
-/libs/adstir.jar
 /local.properties
 .DS_Store
+*~
+
+/libs/adstir.jar
 
