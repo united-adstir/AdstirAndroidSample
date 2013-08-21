@@ -17,13 +17,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
 	android:layout_height="fill_parent"
-	android:orientation="vertical">
+	android:orientation="vertical" >
 
 	<LinearLayout
 		android:layout_width="fill_parent"
 		android:layout_height="0dip"
 		android:layout_weight="1"
 		android:orientation="vertical" >
+
 		<!-- ここにアプリケーションの内容を追加してください。 -->
 		<TextView
 			android:layout_width="wrap_content"
@@ -37,9 +38,11 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="@string/adstir_sample" />
+
 	</LinearLayout>
 	<LinearLayout
 		android:id="@+id/ad_layout"
+		android:orientation="vertical" 
 		android:layout_width="fill_parent"
 		android:layout_height="wrap_content" >
 		<!-- ここに広告が表示されます -->

@@ -16,12 +16,10 @@
 
 package com.ad_stir.sample;
 
-import com.ad_stir.AdstirTerminate;
-import com.ad_stir.AdstirView;
+import com.ad_stir.webview.AdstirWebView;
 
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
-
 import android.app.Activity;
 import android.os.Bundle;
 
@@ -32,19 +30,14 @@ public class AdStirSampleActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
-		// AdstirView onCreate()
+		AdstirWebView view = new AdstirWebView(this, "MEDIA-ID", SPOT-NO,AdstirWebView.DEFAULT_INTERVAL);
+		
 		ViewGroup layout = (ViewGroup) findViewById(R.id.ad_layout);
-		AdstirView adstirView = new AdstirView(this, "MEDIA-ID", SPOT-NO);
-		layout.addView(adstirView, new ViewGroup.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-		//  / AdstirView onCreate()
+		layout.addView(view, new ViewGroup.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
 	}
 
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-
-		// onDestroy()にここから
-		AdstirTerminate.init(this);
-		// ここまでを追加
 	}
 }

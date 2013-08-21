@@ -4,5 +4,6 @@
 .DS_Store
 *~
 
-/libs/adstir.jar
+/libs/*.jar
 
+/libs
