@@ -16,7 +16,7 @@
 
 package com.ad_stir.sample;
 
-import com.ad_stir.webview.AdstirWebView;
+import com.ad_stir.webview.AdstirMraidView;
 
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
@@ -30,7 +30,7 @@ public class AdStirSampleActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
-		AdstirWebView view = new AdstirWebView(this, "MEDIA-ID", SPOT-NO,AdstirWebView.DEFAULT_INTERVAL);
+		AdstirMraidView view = new AdstirMraidView(this, "MEDIA-ID", SPOT-NO,AdstirMraidView.AdSize.Size320x50,AdstirMraidView.DEFAULT_INTERVAL);
 		
 		ViewGroup layout = (ViewGroup) findViewById(R.id.ad_layout);
 		layout.addView(view, new ViewGroup.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
