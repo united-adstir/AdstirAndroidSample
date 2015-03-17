@@ -1,5 +1,4 @@
 このディレクトリに、以下のライブラリを設置してください。
 
-adstir.jar 
+adstirwebview.jar
 利用するアドネットワークのjarファイル等
-
