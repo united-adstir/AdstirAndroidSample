@@ -25,6 +25,7 @@ License
 Usage
 ----------------
 1. Copy adstirwebview.jar in libs directory
-2. Edit AdStirSampleActivity.java
+2. Import Google Play services and add to Project's Library
+3. Edit AdStirSampleActivity.java
  * MEDIA-ID and SPOT-NO
 
