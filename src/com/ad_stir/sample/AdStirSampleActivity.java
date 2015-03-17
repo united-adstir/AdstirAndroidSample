@@ -1,5 +1,5 @@
 /*
-   Copyright 2012-2013 UNITED, inc.
+   Copyright 2012-2015 UNITED, inc.
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -30,7 +30,10 @@ public class AdStirSampleActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
-		AdstirMraidView view = new AdstirMraidView(this, "MEDIA-ID", SPOT-NO,AdstirMraidView.AdSize.Size320x50,AdstirMraidView.DEFAULT_INTERVAL);
+		AdstirMraidView view = new AdstirMraidView(
+				this, "MEDIA-ID", SPOT-ID, 
+				AdstirMraidView.AdSize.Size320x50, 
+				AdstirMraidView.DEFAULT_INTERVAL);
 		
 		ViewGroup layout = (ViewGroup) findViewById(R.id.ad_layout);
 		layout.addView(view, new ViewGroup.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
